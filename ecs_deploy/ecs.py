@@ -132,6 +132,10 @@ class EcsClient(object):
         self.events.put_targets(Rule=rule, Targets=[target])
         return target['Id']
 
+    @property 
+    def region_name(self):
+        return self.boto.meta.region_name
+
 
 class EcsService(dict):
     def __init__(self, cluster, service_definition=None, **kwargs):
@@ -641,7 +645,7 @@ class EcsAction(object):
 
     @property
     def client_region(self): 
-        return self._client.meta.region_name
+        return self._client.region_name
 
     @property
     def client(self):
