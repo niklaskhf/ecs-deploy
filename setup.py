@@ -16,8 +16,8 @@ dependencies = ['click<7.0.0', 'botocore>=1.12.0', 'boto3>=1.4.7', 'future', 're
 setup(
     name='ecs-deploy',
     version=VERSION,
-    url='https://github.com/fabfuel/ecs-deploy',
-    download_url='https://github.com/fabfuel/ecs-deploy/archive/%s.tar.gz' % VERSION,
+    url='https://github.com/niklaskhf/ecs-deploy',
+    download_url='https://github.com/niklaskhf/ecs-deploy/archive/%s.tar.gz' % VERSION,
     license='BSD-3-Clause',
     author='Fabian Fuelling',
     author_email='pypi@fabfuel.de',
