@@ -449,7 +449,8 @@ def deploy_task_definition(deployment, task_definition, title, success_message,
     )
 
     if type(deployment) == DeployBlueGreenAction: 
-        _cd_deploy_url = 'https://ap-northeast-1.console.aws.amazon.com/codesuite/codedeploy/deployments/'
+        region = deployment.client_region
+        _cd_deploy_url = 'https://'+region+'.console.aws.amazon.com/codesuite/codedeploy/deployments/'
         click.secho('\nDeployment created: %s' % deploy_response, fg='green')
         click.secho('\t%s%s\n' % (_cd_deploy_url, deploy_response), fg='yellow')
     click.secho(message, fg='green')

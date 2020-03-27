@@ -640,6 +640,10 @@ class EcsAction(object):
         return running_count
 
     @property
+    def client_region(self): 
+        return self._client.meta.region_name
+
+    @property
     def client(self):
         return self._client
 
