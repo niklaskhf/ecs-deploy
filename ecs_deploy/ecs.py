@@ -195,6 +195,7 @@ class EcsService(dict):
         for event in self.get(u'events'):
             if u'unable' not in event[u'message']:
                 continue
+            event[u'createdAt'] = event[u'createdAt'].replace(tzinfo=tzlocal())
             if since < event[u'createdAt'] < until:
                 errors[event[u'createdAt']] = event[u'message']
         return errors
