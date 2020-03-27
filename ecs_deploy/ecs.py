@@ -724,6 +724,9 @@ class DeployBlueGreenAction(EcsAction):
                 }
             }
         )
+        if response['errorInformation'] != None:
+            raise EcsError(response['errorInformation']['message'])
+    
         self._deployment_id = response['deploymentId']
         return self._deployment_id
 
